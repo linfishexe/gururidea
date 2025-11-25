@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/portfolio.css">
+    <title>Document</title>
+</head>
+<style>
+    
+</style>
+<body>
+    <header>
+        <nav>
+            <a href=""> <img src="./img/LOGO.jpg" alt="Guru_Logo"></a>
+            <ul>
+                <li><a href="index.html">About us</a></li>
+                <li><a href="portfolio.html">portfolio</a></li>
+            </ul>
+        </nav>
+        <div class="banner">
+            <div class="article">
+                <h1>Portfolio</h1>
+            </div>
+            <div class="banner_img">
+                <img src="" alt="">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="works container">
+            <div class="work-labels">
+                <button onclick="update_works_display('平面設計')">平面設計</button>
+                <button onclick="update_works_display('網站建置')">網站建置</button>
+                <button onclick="update_works_display('系統建置')">系統建置</button>
+                <button onclick="update_works_display('簡易遊戲')">簡易遊戲</button>
+            </div>
+
+            <div class="work-cards">
+                <!-- <div class="card">
+                    <img src="./img/GL_case.png" alt="case">
+                    <div class="info">
+                        <h2>作品名稱</h2>
+                        <div class="tools">
+                            <div class="tool">
+                                <img src="./img/figma.svg" alt="">
+                                <span>Figma</span>
+                            </div>
+                            <div class="tool">
+                                <img src="./img/figma.svg" alt="">
+                                <span>Figma</span>
+                            </div>
+                        </div>
+                        <div class="work-type-tag">平面設計</div>
+                    </div>
+                    <div class="author">製作夥伴</div>
+                </div> -->
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <img src="./img/LOGO.jpg" alt="">
+            <div>
+                <a href=""></a>
+                <a href=""></a>
+            </div>
+        </div>
+        <small>Copyright © 2025 網站名稱 | CYU工作室製作</small>
+    </footer>
+</body>
+<script>
+
+const works = {
+    "平面設計": [
+        {
+            title: 'qqq',
+            imageSrc: './img/ST_case.png',
+            tools: ['figma'],
+            authorName: '阿瓜'
+        }
+    ],
+    "網站建置": [
+        {
+            title: 'ttt',
+            imageSrc: './img/QJ_case.png',
+            tools: ['figma'],
+            authorName: '阿笨'
+        }
+    ],
+    "系統建置": [
+        {
+            title: 'uuu',
+            imageSrc: './img/QD_case.png',
+            tools: ['figma'],
+            authorName: '小雞'
+        }
+    ],
+    "簡易遊戲": [
+        {
+            title: '123',
+            imageSrc: './img/SS_case.png',
+            tools: ['figma'],
+            authorName: '456'
+        }
+    ],
+}
+
+const workCards = document.querySelector('.work-cards')
+
+function gen_work_card(title, imageSrc, toolsArray, workType, authorName) {
+    const fragment = document.createDocumentFragment();
+
+    // 建立 card 容器
+    const card = document.createElement("div");
+    card.className = "card";
+
+    // 建立圖片
+    const img = document.createElement("img");
+    img.src = imageSrc;
+    img.alt = title;
+    card.appendChild(img);
+
+    // info 區塊
+    const info = document.createElement("div");
+    info.className = "info";
+
+    // h2 標題
+    const h2 = document.createElement("h2");
+    h2.textContent = title;
+    info.appendChild(h2);
+
+    // tools 區塊
+    const tools = document.createElement("div");
+    tools.className = "tools";
+
+    // 根據字串陣列生成工具
+    toolsArray.forEach(toolName => {
+        const tool = document.createElement("div");
+        tool.className = "tool";
+
+        const toolImg = document.createElement("img");
+        // 這裡假設工具圖示檔名就是工具名稱的小寫，例如 figma.svg
+        toolImg.src = `./img/${toolName.toLowerCase()}.svg`;
+        toolImg.alt = toolName;
+
+        const toolSpan = document.createElement("span");
+        toolSpan.textContent = toolName;
+
+        tool.append(toolImg, toolSpan);
+        tools.appendChild(tool);
+    });
+
+    info.appendChild(tools);
+    card.appendChild(info);
+
+    // work-type-tag
+    const workTypeTag = document.createElement("div");
+    workTypeTag.className = "work-type-tag";
+    workTypeTag.textContent = workType;
+    info.appendChild(workTypeTag);
+
+    // author
+    const author = document.createElement("div");
+    author.className = "author";
+    author.textContent = authorName;
+    card.appendChild(author);
+
+    fragment.appendChild(card);
+
+    return fragment;
+}
+
+function update_works_display( workType ) {
+    workCards?.replaceChildren();
+    for(const work of works[workType]) {
+        const card = gen_work_card(
+            work.title,
+            work.imageSrc,
+            work.tools,
+            workType,
+            work.authorName
+        )
+        workCards.appendChild(card)
+    }
+}
+
+update_works_display("平面設計")
+</script>
+</html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 222">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        font-family: Calibri, Calibri;
+        font-size: 14px;
+        letter-spacing: .1em;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #334155;
+      }
+
+      .cls-2, .cls-5, .cls-6 {
+        stroke: #334155;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-5, .cls-6 {
+        fill: none;
+      }
+
+      .cls-6 {
+        stroke-width: 3px;
+      }
+
+      .cls-7 {
+        fill: #10b981;
+      }
+    </style>
+  </defs>
+  <rect class="cls-4" x="13.5" y="17.5" width="316" height="194" rx="11.99" ry="11.99"/>
+  <rect class="cls-2" x="10" y="13" width="316" height="194" rx="12.07" ry="12.07"/>
+  <rect class="cls-4" x="37.5" y="28.5" width="262" height="27" rx="13.5" ry="13.5"/>
+  <rect class="cls-5" x="38" y="78" width="139" height="101"/>
+  <circle class="cls-1" cx="54.5" cy="42.5" r="3.5"/>
+  <circle class="cls-1" cx="64.15" cy="42.5" r="3.5"/>
+  <circle class="cls-1" cx="73.8" cy="42.5" r="3.5"/>
+  <line class="cls-6" x1="200" y1="78" x2="200" y2="181"/>
+  <text class="cls-3" transform="translate(215.75 85.26)"><tspan x="0" y="0">&lt;p&gt;</tspan></text>
+  <text class="cls-3" transform="translate(215.75 179.26)"><tspan x="0" y="0">&lt;/p&gt;</tspan></text>
+  <line class="cls-6" x1="216" y1="96.5" x2="295" y2="96.5"/>
+  <line class="cls-6" x1="216" y1="117.17" x2="264.5" y2="117.17"/>
+  <line class="cls-6" x1="216" y1="137.83" x2="288.5" y2="137.83"/>
+  <line class="cls-6" x1="216" y1="158.5" x2="295" y2="158.5"/>
+  <path class="cls-7" d="M170.77,195.9c-1.71,.02-2.65-.73-3.3-2.82-1.61-5.19-3.17-10.39-4.75-15.59-1.35-4.44-2.68-8.88-4.05-13.31-.46-1.49-.62-2.89,.62-4.12,1.21-1.18,2.56-.95,3.98-.51,9.42,2.88,18.85,5.74,28.28,8.62,.4,.12,.81,.24,1.2,.39,1.42,.54,2.27,1.53,2.25,3.1-.02,1.56-.86,2.53-2.33,3.02-4,1.35-7.97,2.76-11.98,4.07-1.48,.49-2.38,1.32-2.86,2.85-1.27,4.02-2.67,8-4.02,12-.49,1.45-1.47,2.28-3.04,2.3Z"/>
+</svg>
