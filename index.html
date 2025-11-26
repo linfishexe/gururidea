@@ -9,20 +9,25 @@
 <body>
     <header>
         <nav>
-            <a href=""> <img src="./img/LOGO.jpg" alt="Guru_Logo"></a>
+            <a href="index.html" class="nav_logo"> <img src="./img/LOGO.jpg" alt="Guru_Logo"></a>
             <ul>
                 <li><a href="index.html">About us</a></li>
                 <li><a href="portfolio.html">portfolio</a></li>
             </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
         <div class="banner container">
             <div class="article">
                 <h1>主標題</h1>
                 <p>一段話</p>
-                <button>精選案例</button>
+                <button target="_blank">精選案例</button>
             </div>
             <div class="banner_img">
-                <img src="" alt="">
+                <img src="./img/banner_icon_工作區域 1.svg" alt="" class="banner_">
             </div>
         </div>
     </header>
@@ -168,14 +173,20 @@
     </section>
 
     <footer>
-        <div class="container">
+        <div class="container footer_contain">
             <img src="./img/LOGO.jpg" alt="">
-            <div>
-                <a href=""></a>
-                <a href=""></a>
+            <div class="social_media">
+                <a href=""><img src="./img/LINE2.png" alt=""></a>
+                <a href=""><img src="./img/IG.png" alt=""></a>
             </div>
         </div>
         <small>Copyright © 2025 網站名稱 | CYU工作室製作</small>
     </footer>
+
+    <script>
+    function toggleMenu() {
+      document.querySelector('.navbar ul').classList.toggle('active');
+    }
+  </script>
 </body>
 </html>

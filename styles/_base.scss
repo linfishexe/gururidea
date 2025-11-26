@@ -1,5 +1,6 @@
 *{
     margin: 0;
+    box-sizing: border-box;
     section{
         padding: 100px 0;
     }
@@ -8,7 +9,8 @@
     font-family: '微軟正黑體';
     position: relative;
     a{
-        
+        text-decoration: none;
+        color: #ffffff;
     }
 }
 
@@ -52,7 +54,7 @@ header{
         padding: 8px 0;
         z-index: 1;
         box-shadow: 0 0 5px #ffffff;
-        a{
+        .nav_logo{
             margin-left: 80px;
             img{
                 width: 32px;
@@ -71,18 +73,53 @@ header{
 }
 
 footer{
+    display: flex;
+    flex-direction: column;
     background-color: #334155;
-    padding: 20px;
-    div{
+    padding: 40px 20px 20px;
+    .footer_contain{
         display: flex;
-        img{
+        justify-content: space-between; /* 左右分布 */
+        align-items: center; 
+        padding-bottom: 20px;
+        &>img{
             width: 10%;
         }
     }
+    .social_media{
+        display: flex;
+        justify-content: flex-end;      
+        gap: 20%;                       
+        flex: 1;
+        a{
+            &>img{
+                width: 10%;
+                border: 0;
+                border-radius: 50px;
+            }
+        }
+        
+    }
     small{
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
+        text-align: center;
         color: #ffffff;
+    }
+}
+
+@media (max-width:660px){
+    nav{
+        width: 100%;
+    }
+    footer{
+        .footer_contain{
+            &>img{
+                width: 20%;
+            }
+        }
+        .social_media{
+            &>img{
+                width: 20%;
+            }
+        }
     }
 }

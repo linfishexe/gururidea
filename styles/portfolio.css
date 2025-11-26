@@ -1,6 +1,7 @@
 @charset "UTF-8";
 * {
   margin: 0;
+  box-sizing: border-box;
   cursor: url("../img/cursor16.ico"), auto;
   letter-spacing: 1.5px;
   font-family: "微軟正黑體";
@@ -9,6 +10,11 @@
 * section {
   padding: 100px 0;
 }
+* a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 h1 {
   font-size: 48px;
 }
@@ -58,10 +64,10 @@ header nav {
   z-index: 1;
   box-shadow: 0 0 5px #ffffff;
 }
-header nav a {
+header nav .nav_logo {
   margin-left: 80px;
 }
-header nav a img {
+header nav .nav_logo img {
   width: 32px;
 }
 header nav ul {
@@ -75,22 +81,47 @@ header nav ul li {
 }
 
 footer {
-  background-color: #334155;
-  padding: 20px;
-}
-footer div {
   display: flex;
+  flex-direction: column;
+  background-color: #334155;
+  padding: 40px 20px 20px;
 }
-footer div img {
+footer .footer_contain {
+  display: flex;
+  justify-content: space-between; /* 左右分布 */
+  align-items: center;
+  padding-bottom: 20px;
+}
+footer .footer_contain > img {
   width: 10%;
 }
+footer .social_media {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20%;
+  flex: 1;
+}
+footer .social_media a > img {
+  width: 10%;
+  border: 0;
+  border-radius: 50px;
+}
 footer small {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  text-align: center;
   color: #ffffff;
 }
 
+@media (max-width: 660px) {
+  nav {
+    width: 100%;
+  }
+  footer .footer_contain > img {
+    width: 20%;
+  }
+  footer .social_media > img {
+    width: 20%;
+  }
+}
 header .banner {
   height: 300px;
   background-color: #ccc;

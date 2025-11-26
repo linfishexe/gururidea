@@ -1,6 +1,7 @@
 @charset "UTF-8";
 * {
   margin: 0;
+  box-sizing: border-box;
   cursor: url("../img/cursor16.ico"), auto;
   letter-spacing: 1.5px;
   font-family: "微軟正黑體";
@@ -9,6 +10,11 @@
 * section {
   padding: 100px 0;
 }
+* a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 h1 {
   font-size: 48px;
 }
@@ -58,10 +64,10 @@ header nav {
   z-index: 1;
   box-shadow: 0 0 5px #ffffff;
 }
-header nav a {
+header nav .nav_logo {
   margin-left: 80px;
 }
-header nav a img {
+header nav .nav_logo img {
   width: 32px;
 }
 header nav ul {
@@ -75,27 +81,66 @@ header nav ul li {
 }
 
 footer {
-  background-color: #334155;
-  padding: 20px;
-}
-footer div {
   display: flex;
+  flex-direction: column;
+  background-color: #334155;
+  padding: 40px 20px 20px;
 }
-footer div img {
+footer .footer_contain {
+  display: flex;
+  justify-content: space-between; /* 左右分布 */
+  align-items: center;
+  padding-bottom: 20px;
+}
+footer .footer_contain > img {
   width: 10%;
 }
+footer .social_media {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20%;
+  flex: 1;
+}
+footer .social_media a > img {
+  width: 10%;
+  border: 0;
+  border-radius: 50px;
+}
 footer small {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  text-align: center;
   color: #ffffff;
 }
 
+@media (max-width: 660px) {
+  nav {
+    width: 100%;
+  }
+  footer .footer_contain > img {
+    width: 20%;
+  }
+  footer .social_media > img {
+    width: 20%;
+  }
+}
 header .banner {
-  padding: 150px 0 100px;
+  display: flex;
+  padding: 150px 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 header .banner .article p {
   font-size: 36px;
+}
+header .banner .article button {
+  margin-top: 30px;
+}
+header .banner .banner_img {
+  position: relative;
+}
+header .banner .banner_img img {
+  width: 450px;
+  animation: float 3s ease-in-out infinite;
 }
 
 #slogan {
@@ -126,6 +171,14 @@ header .banner .article p {
   box-shadow: 0 0 5px #555;
   display: flex;
   flex-direction: column;
+  transition: all 0.3s;
+}
+#service .service_cards .card:hover {
+  background-color: #334155;
+  color: #fff;
+}
+#service .service_cards .card:hover .card_img_box img {
+  transform: translateY(-10px); /* 向上移動 10px */
 }
 #service .service_cards .card .card_text_box h3 {
   font-weight: 400;
@@ -165,11 +218,12 @@ header .banner .article p {
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 15px;
   grid-row-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--min-column-size, 30ch), 100%), 1fr));
 }
 #case .show_cases .cases {
   height: 220px;
   border-radius: 20px;
-  box-shadow: 5px 5px 15px #334155;
+  box-shadow: 3px 3px 5px rgba(51, 65, 85, 0.6392156863);
 }
 #case .show_cases .cases p {
   position: relative;
@@ -197,6 +251,7 @@ header .banner .article p {
 #case .show_cases .cases:hover p {
   color: #fff;
   display: block;
+  font-size: 500;
 }
 #case .show_cases .case1, #case .show_cases .case2, #case .show_cases .case3, #case .show_cases .case4, #case .show_cases .case5, #case .show_cases .case6, #case .show_cases .case7, #case .show_cases .case8, #case .show_cases .case9 {
   position: relative;
@@ -270,6 +325,10 @@ header .banner .article p {
   padding: 30px;
   border: 0;
   border-radius: 15px;
+  transition: transform 0.3s;
+}
+#support .support_con .support:hover {
+  transform: translateY(-10px); /* 向上移動 10px */
 }
 #support .support_con .support div {
   display: flex;
@@ -326,6 +385,17 @@ header .banner .article p {
   }
 }
 @media (max-width: 885px) {
+  .banner {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .banner .banner_img {
+    padding: 30px 0 0;
+  }
+  .banner .banner_img img {
+    max-width: 300px;
+  }
   #support .support_con .support {
     width: 100%;
   }
@@ -360,4 +430,15 @@ header .banner .article p {
     margin: 0 auto;
     display: block;
   }
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  } /* 向上移動 */
+  100% {
+    transform: translateY(0);
+  } /* 回到原位 */
 }/*# sourceMappingURL=index.css.map */
