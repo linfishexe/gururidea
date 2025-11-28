@@ -12,15 +12,15 @@
 }
 * a {
   text-decoration: none;
-  color: #ffffff;
+  color: #334155;
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 42px;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 26px;
   margin-bottom: 20px;
 }
 
@@ -39,6 +39,13 @@ button {
 button:hover {
   background-color: #334155;
   color: #ffffff;
+}
+
+.b_container {
+  max-width: 1200px;
+  width: 90%;
+  position: relative;
+  margin: 0 auto;
 }
 
 .container {
@@ -79,6 +86,24 @@ header nav ul li {
   padding: 0 10px;
   color: #ffffff;
 }
+header nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+header nav .hamburger {
+  display: none; /* 預設隱藏，桌面版不顯示 */
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 20px;
+}
+header nav span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 4px 0;
+  border-radius: 2px;
+}
 
 footer {
   display: flex;
@@ -88,23 +113,27 @@ footer {
 }
 footer .footer_contain {
   display: flex;
-  justify-content: space-between; /* 左右分布 */
+  justify-content: space-between;
   align-items: center;
   padding-bottom: 20px;
 }
 footer .footer_contain > img {
-  width: 10%;
+  width: 72px;
 }
 footer .social_media {
   display: flex;
   justify-content: flex-end;
-  gap: 20%;
+  gap: 20px;
   flex: 1;
 }
 footer .social_media a > img {
-  width: 10%;
+  width: 38px;
   border: 0;
   border-radius: 50px;
+  transition: transform 0.3s;
+}
+footer .social_media a > img:hover {
+  transform: scale(1.1);
 }
 footer small {
   text-align: center;
@@ -112,30 +141,50 @@ footer small {
 }
 
 @media (max-width: 660px) {
-  nav {
+  header nav {
     width: 100%;
+    border-radius: 0px;
+    margin-top: 0px;
+    padding: 8px 0;
+    z-index: 1;
+    box-shadow: 0 0 5px #ffffff;
   }
-  footer .footer_contain > img {
-    width: 20%;
+  header nav > .nav_logo {
+    margin-left: 40px;
   }
-  footer .social_media > img {
-    width: 20%;
+  header nav > .nav_logo img {
+    width: 38px;
+  }
+  header nav ul {
+    margin-left: 0px;
+  }
+}
+@media (max-width: 767px) {
+  header nav ul {
+    display: none; /* 預設隱藏選單 */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #334155;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  header nav ul.active {
+    display: flex; /* 點擊漢堡後展開 */
+  }
+  header nav .hamburger {
+    display: flex; /* 手機版顯示漢堡 icon */
   }
 }
 header .banner {
-  height: 300px;
-  background-color: #ccc;
+  padding: 120px 0 50px;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.2901960784);
 }
-header .banner .article {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-header .banner .article h1 {
-  font-family: "微軟正黑體";
-  font-weight: 100;
+header .banner .banner_img img {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
 }
 
 main .works .work-labels {

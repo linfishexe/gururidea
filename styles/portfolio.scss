@@ -2,17 +2,13 @@
 
 header {
     .banner {
-        height: 300px;
-        background-color: #ccc;
-        .article {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            h1 {
-                font-family: '微軟正黑體';
-                font-weight: 100;
+        padding: 120px 0 50px;
+        border-bottom: 1px solid #3341554a;
+        .banner_img{
+            img{
+                left: 50%;
+                transform: translateX(-50%);
+                width: 600px;
             }
         }
     }

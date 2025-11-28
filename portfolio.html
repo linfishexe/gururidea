@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/LOGO.ico">
     <link rel="stylesheet" href="./styles/portfolio.css">
-    <title>Document</title>
+    <title>Gururidea</title>
 </head>
 <style>
     
 </style>
 <body>
     <header>
-        <nav>
-            <a href=""> <img src="./img/LOGO.jpg" alt="Guru_Logo"></a>
+       <nav>
+            <a href="index.html" class="nav_logo"> <img src="./img/LOGO.jpg" alt="Guru_Logo"></a>
             <ul>
                 <li><a href="index.html">About us</a></li>
                 <li><a href="portfolio.html">portfolio</a></li>
             </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
         <div class="banner">
-            <div class="article">
-                <h1>Portfolio</h1>
-            </div>
             <div class="banner_img">
-                <img src="" alt="">
+                <img src="./img/Portfolio_banner_工作區域 1.svg" alt="">
             </div>
         </div>
     </header>
@@ -61,49 +64,94 @@
     </main>
 
     <footer>
-        <div class="container">
+        <div class="container footer_contain">
             <img src="./img/LOGO.jpg" alt="">
-            <div>
-                <a href=""></a>
-                <a href=""></a>
+            <div class="social_media">
+                <a href=""><img src="./img/LINE2.png" alt=""></a>
+                <a href=""><img src="./img/IG.png" alt=""></a>
             </div>
         </div>
-        <small>Copyright © 2025 網站名稱 | CYU工作室製作</small>
+        <small>Copyright © 2025 網站名稱 | DY工作室製作</small>
     </footer>
 </body>
 <script>
+function toggleMenu() {
+    document.querySelector("nav ul").classList.toggle("active");
+}
 
 const works = {
     "平面設計": [
         {
-            title: 'qqq',
-            imageSrc: './img/ST_case.png',
+            title: '早點見面-菜單設計',
+            imageSrc: './img/works_img/early_menu_case.png',
             tools: ['figma'],
-            authorName: '阿瓜'
-        }
+            authorName: '千煦設計'
+        },
+        {
+            title: '向洋數位顧問-名片設計',
+            imageSrc: './img/works_img/sianyang_card_case.png',
+            tools: ['figma'],
+            authorName: '千煦設計'
+        },
+        {
+            title: '巧將室內設計-室內設計',
+            imageSrc: './img/works_img/chiao_inner_case.png',
+            tools: ['figma'],
+            authorName: '千煦設計'
+        },
     ],
     "網站建置": [
         {
-            title: 'ttt',
-            imageSrc: './img/QJ_case.png',
-            tools: ['figma'],
-            authorName: '阿笨'
-        }
+            title: '世翔國際股份有限公司',
+            imageSrc: './img/works_img/Bio_case.png',
+            tools: ['HTML', 'CSS'],
+            authorName: '好扣資訊'
+        },
+        {
+            title: '潤音樂器',
+            imageSrc: './img/works_img/YAMAHA_music_case.png',
+            tools: ['HTML', 'CSS'],
+            authorName: '好扣資訊'
+        },
+        {
+            title: 'Moldex3D',
+            imageSrc: './img/works_img/Moldex_case.png',
+            tools: ['HTML', 'CSS'],
+            authorName: '好扣資訊'
+        },
+        {
+            title: '龍霖建案',
+            imageSrc: './img/works_img/LONGLIN_case.png',
+            tools: ['HTMLHIML', 'CSS'],
+            authorName: '好扣資訊'
+        },
+        {
+            title: '順天閣-開運命理館',
+            imageSrc: './img/works_img/Swun_case.png',
+            tools: ['HTML', 'CSS'],
+            authorName: '好扣資訊'
+        },
     ],
     "系統建置": [
         {
-            title: 'uuu',
-            imageSrc: './img/QD_case.png',
-            tools: ['figma'],
+            title: '音樂教室預約系統',
+            imageSrc: './img/works_img/music_classroom_case.png',
+            tools: ['PHP'],
             authorName: '小雞'
-        }
+        },
+        {
+            title: '課製ERP系統',
+            imageSrc: './img/works_img/erp_case.png',
+            tools: ['PHP'],
+            authorName: '小雞'
+        },
     ],
     "簡易遊戲": [
         {
-            title: '123',
+            title: 'bisness_Duck',
             imageSrc: './img/SS_case.png',
-            tools: ['figma'],
-            authorName: '456'
+            tools: ['Unreal Engine'],
+            authorName: 'DY工作室'
         }
     ],
 }

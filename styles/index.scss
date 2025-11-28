@@ -8,11 +8,16 @@ header{
         justify-content: space-between;
         align-items: center;
         .article{
+            padding-right: 180px;
             p{
-                font-size: 36px;
+                margin-top: 20px;
+                font-size: 28px;
             }
             button{
                 margin-top: 30px;
+                &:hover a{
+                    color:#fff;
+                }
             }
         }
         .banner_img{
@@ -32,8 +37,8 @@ header{
     h2{
         font-size: 26px;
     }
-    p{
-        margin-top: 20px;
+    .process_mobile{
+        display: none;
     }
 }
 
@@ -55,11 +60,6 @@ header{
             box-shadow: 0 0 5px #555;
             display: flex;
             flex-direction: column;
-            transition: all .3s;
-            &:hover{
-                background-color: #334155;
-                color: #fff;
-            }
             &:hover .card_img_box img{
                 transform: translateY(-10px); /* 向上移動 10px */
             }
@@ -76,6 +76,7 @@ header{
             .card_img_box {
                 img {
                     margin: 1rem;
+                    transition: all .3s;
                 }
             }
         }
@@ -178,6 +179,15 @@ header{
 
 
     }
+    button{
+        position: relative;
+        margin-top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        &:hover a{
+            color:#fff;
+        }
+    }
 }
 
 #support{
@@ -235,9 +245,11 @@ header{
         position: relative;
         left: 50%;
         transform: translateX(-50%);
-        &:hover{
-            background-color: #334155;
-            color: #ffffff;
+        &:hover {
+            background-color:#334155;
+        }
+        &:hover a{
+            color:#fff;
         }
     }
 }
@@ -259,7 +271,8 @@ header{
 }
 
 @media  (max-width: 885px) {
-    .banner{
+    header{
+        .banner{
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
@@ -269,14 +282,35 @@ header{
                 max-width: 300px;
             }
         }
-    }
-    #support{
-        .support_con{
-            .support{
-                width: 100%;
+        .article{
+            padding-right: 0px;
+            h1{
+                font-size: 36px;
+            }
+            p{
+                font-size: 22px;
             }
         }
     }
+        #support{
+            .support_con{
+                .support{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    #slogan{
+        h2{
+            text-align: center;
+        }
+            .process_desktop{
+                display: none;
+            }
+            .process_mobile{
+                display: block;
+            }
+        }
 }
 
 @media  (max-width: 1075px) {

@@ -10,12 +10,12 @@
     position: relative;
     a{
         text-decoration: none;
-        color: #ffffff;
+        color: #334155;
     }
 }
 
-h1 { font-size: 48px; }
-h2 { font-size: 28px; margin-bottom: 20px; }
+h1 { font-size: 42px; }
+h2 { font-size: 26px; margin-bottom: 20px; }
 h3 { font-size: 24px; }
 
 button{
@@ -30,7 +30,12 @@ button{
         color: #ffffff;
     }
 }
-
+.b_container{
+    max-width: 1200px;
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+}
 .container {
     max-width: 1024px;
     width: 90%;
@@ -67,7 +72,25 @@ header{
                 list-style: none;
                 padding: 0 10px;
                 color: #ffffff;
+                a{
+                    text-decoration: none;
+                    color: #ffffff;
+                }
             }   
+        }
+        .hamburger {
+            display: none; /* 預設隱藏，桌面版不顯示 */
+            flex-direction: column;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: 20px;
+        }
+        span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 4px 0;
+            border-radius: 2px;
         }
     }
 }
@@ -79,23 +102,27 @@ footer{
     padding: 40px 20px 20px;
     .footer_contain{
         display: flex;
-        justify-content: space-between; /* 左右分布 */
+        justify-content: space-between;
         align-items: center; 
         padding-bottom: 20px;
         &>img{
-            width: 10%;
+            width: 72px;
         }
     }
     .social_media{
         display: flex;
         justify-content: flex-end;      
-        gap: 20%;                       
+        gap: 20px;                       
         flex: 1;
         a{
             &>img{
-                width: 10%;
+                width: 38px;
                 border: 0;
                 border-radius: 50px;
+                transition: transform .3s;
+                &:hover{
+                    transform: scale(1.1);
+                }
             }
         }
         
@@ -107,19 +134,48 @@ footer{
 }
 
 @media (max-width:660px){
-    nav{
+    header{
+        nav{
         width: 100%;
-    }
-    footer{
-        .footer_contain{
-            &>img{
-                width: 20%;
+        border-radius: 0px;
+        margin-top: 0px;
+        padding: 8px 0;
+        z-index: 1;
+        box-shadow: 0 0 5px #ffffff;
+        >.nav_logo{
+            margin-left: 40px;
+            img{
+                width: 38px;
             }
         }
-        .social_media{
-            &>img{
-                width: 20%;
-            }
+        ul{
+            margin-left: 0px;
         }
     }
+    }
+}
+
+@media(max-width: 767px){
+header {
+    nav {
+        ul {
+            display: none; /* 預設隱藏選單 */
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: #334155;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        ul.active {
+            display: flex; /* 點擊漢堡後展開 */
+        }
+
+        .hamburger {
+            display: flex; /* 手機版顯示漢堡 icon */
+        }
+    }
+}
 }
