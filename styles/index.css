@@ -83,19 +83,22 @@ header nav ul {
 }
 header nav ul li {
   list-style: none;
-  padding: 0 10px;
+  padding: 0 20px;
   color: #ffffff;
+  transition: transform 0.3s;
 }
 header nav ul li a {
   text-decoration: none;
   color: #ffffff;
 }
+header nav ul li:hover {
+  transform: scale(1.1);
+}
 header nav .hamburger {
   display: none; /* 預設隱藏，桌面版不顯示 */
   flex-direction: column;
-  cursor: pointer;
   margin-left: auto;
-  margin-right: 20px;
+  margin-right: 40px;
 }
 header nav span {
   width: 25px;
@@ -140,38 +143,50 @@ footer small {
   color: #ffffff;
 }
 
-@media (max-width: 660px) {
+@media (max-width: 767px) {
   header nav {
     width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+  header nav ul {
     border-radius: 0px;
-    margin-top: 0px;
+    margin-top: 58px;
+    margin-left: 0;
     padding: 8px 0;
     z-index: 1;
-    box-shadow: 0 0 5px #ffffff;
-  }
-  header nav > .nav_logo {
-    margin-left: 40px;
-  }
-  header nav > .nav_logo img {
-    width: 38px;
-  }
-  header nav ul {
-    margin-left: 0px;
-  }
-}
-@media (max-width: 767px) {
-  header nav ul {
-    display: none; /* 預設隱藏選單 */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0);
+    /* ⭐ 修改：不要用 display:none，改用 transform + opacity */
+    width: 100%;
     flex-direction: column;
     position: absolute;
-    top: 60px;
-    right: 20px;
-    background: #334155;
-    border-radius: 10px;
-    padding: 10px;
+    top: 0;
+    right: 0;
+    background: #43546b;
+    /* ⭐ 新增：初始狀態往右邊收起 */
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+  header nav .nav_logo {
+    margin-left: 40px;
+  }
+  header nav .nav_logo img {
+    width: 38px;
   }
   header nav ul.active {
-    display: flex; /* 點擊漢堡後展開 */
+    /* ⭐ 新增：展開時由右邊滑出 */
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  header nav ul.active li {
+    padding: 1rem 10px;
+    text-align: center;
+  }
+  header nav ul.active li:hover {
+    transform: translateX(15px);
   }
   header nav .hamburger {
     display: flex; /* 手機版顯示漢堡 icon */
@@ -460,7 +475,7 @@ header .banner .banner_img img {
     align-items: center;
   }
   header .banner .banner_img {
-    padding: 30px 0 0;
+    padding: 60px 0 0;
   }
   header .banner .banner_img img {
     max-width: 300px;
