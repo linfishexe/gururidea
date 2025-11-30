@@ -435,8 +435,14 @@ header .banner .banner_img img {
   margin-top: 20px;
 }
 
+#lead img {
+  width: 400px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 #lead h2 {
   text-align: center;
+  margin-top: 40px;
 }
 #lead button {
   margin-top: 30px;
@@ -500,6 +506,9 @@ header .banner .banner_img img {
   }
   #slogan .process_mobile {
     display: block;
+  }
+  #lead img {
+    width: 100%;
   }
 }
 @media (max-width: 1075px) {

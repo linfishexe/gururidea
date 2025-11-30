@@ -232,8 +232,14 @@ header{
 }
 
 #lead{
+    img{
+        width: 400px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
     h2{
         text-align: center;
+        margin-top: 40px;
     }
     button{
         margin-top: 30px;
@@ -311,6 +317,11 @@ header{
                 display: block;
             }
         }
+    #lead{
+        img{
+            width: 100%;
+        }
+    }
 }
 
 @media  (max-width: 1075px) {

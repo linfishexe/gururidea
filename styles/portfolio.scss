@@ -38,7 +38,7 @@ main {
                     min-width: 300px;
                 }
                 .info {
-                    padding: 2rem calc(120px + 1rem) 2rem 4rem;
+                    padding: 2rem calc(120px + 1rem) 2rem 1rem;
                     flex-grow: 1;
                     .tools {
                         display: flex;
@@ -98,7 +98,7 @@ main {
     .banner {
         .banner_img{
             img{
-                width: 450px;
+                width: 100%;
             }
         }
     }

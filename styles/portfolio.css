@@ -226,7 +226,7 @@ main .works .work-cards .card > img {
   min-width: 300px;
 }
 main .works .work-cards .card .info {
-  padding: 2rem calc(120px + 1rem) 2rem 4rem;
+  padding: 2rem calc(120px + 1rem) 2rem 1rem;
   flex-grow: 1;
 }
 main .works .work-cards .card .info .tools {
@@ -270,6 +270,6 @@ main .works .work-cards .card .author {
     min-width: none;
   }
   header .banner .banner_img img {
-    width: 450px;
+    width: 100%;
   }
 }/*# sourceMappingURL=portfolio.css.map */
