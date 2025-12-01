@@ -18,10 +18,10 @@
                 <li><a href="index.html">About us</a></li>
                 <li><a href="portfolio.html">portfolio</a></li>
             </ul>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="hamburger" onclick="toggleMenu()"> 
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </nav>
         <div class="banner">
@@ -75,9 +75,26 @@
     </footer>
 </body>
 <script>
-function toggleMenu() {
-    document.querySelector("nav ul").classList.toggle("active");
-}
+    /**
+     * 切換導航列表和漢堡圖標的 active 狀態
+     */
+    function toggleMenu() {
+        // 1. 取得需要切換 class 的元素
+        const navUl = document.querySelector('nav ul'); // 導航列表 (<ul>)
+        const hamburger = document.querySelector('.hamburger'); // 漢堡圖標 (<div>)
+        
+        // 2. 切換 .active 類
+        
+        // a. 導航列表：控制滑出/滑入
+        if (navUl) {
+            navUl.classList.toggle('active'); 
+        }
+
+        // b. 漢堡圖標：控制變成叉叉/復原
+        if (hamburger) {
+            hamburger.classList.toggle('active');
+        }
+    }
 
 const works = {
     "平面設計": [

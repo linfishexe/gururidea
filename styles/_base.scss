@@ -93,7 +93,6 @@ header{
             width: 25px;
             height: 3px;
             background: #fff;
-            margin: 4px 0;
             border-radius: 2px;
         }
     }
@@ -137,61 +136,100 @@ footer{
     }
 }
 
-@media(max-width: 767px){
-  header {
-    nav {
-      width: 100%;
-      margin: 0;
-      border-radius: 0;
+@media (max-width: 767px) {
+    header {
+        nav {
+            width: 100%;
+            margin: 0;
+            border-radius: 0;
+            
+            /* 導航列表 UL 的樣式 */
+            ul {
+                border-radius: 0px;
+                margin-top: 58px;
+                margin-left: 0;
+                padding: 8px 0;
+                z-index: 1;
+                box-shadow: 0 0 5px #ffffff00;
+                
+                width: 100%;
+                flex-direction: column;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: #43546b;
 
-      ul {
-        border-radius: 0px;
-        margin-top: 58px;
-        margin-left: 0;
-        padding: 8px 0;
-        z-index: 1;
-        box-shadow: 0 0 5px #ffffff00;
-        /* ⭐ 修改：不要用 display:none，改用 transform + opacity */
-        width: 100%;
-        flex-direction: column;
-        position: absolute;
-        top: 0;
-        right: 0;
-        background: #43546b;
+                /* ⭐ 初始狀態：往右邊收起，隱藏 */
+                transform: translateX(100%);
+                opacity: 0;
+                pointer-events: none;
+                transition: transform 0.4s ease, opacity 0.4s ease; 
+                li{
+                    padding: 1rem 10px;
+                    text-align: center;
+                }
+            }
 
-        /* ⭐ 新增：初始狀態往右邊收起 */
-        transform: translateX(100%);
-        opacity: 0;
-        pointer-events: none;
-        transition: transform 0.4s ease, opacity 0.4s ease;
-      }
+            .nav_logo {
+                margin-left: 40px;
+                img {
+                    width: 38px;
+                }
+            }
 
-      .nav_logo {
-        margin-left: 40px;
-        img {
-          width: 38px;
+            /* ⭐ 展開狀態：滑出，顯示 (ul.active) */
+            ul.active {
+                transform: translateX(0);
+                opacity: 1;
+                pointer-events: auto;
+
+                li {
+                    padding: 1rem 10px;
+                    text-align: center;
+                    &:hover {
+                        transform: translateX(15px); 
+                    }
+                }
+            }
+
+            /* ---------------------------------
+             * ⭐ 漢堡圖標 (Hamburger) 樣式與轉換
+             * --------------------------------- */
+            .hamburger {
+                display: flex; /* 手機版顯示漢堡 icon */
+                flex-direction: column;
+                justify-content: space-around;
+                width: 25px; /* 圖標寬度 */
+                height: 20px; /* 圖標高度 */
+                cursor: pointer;
+                z-index: 2; /* 確保它在導航列表之上 */
+                
+                /* 漢堡圖標的每一條線 (.bar) */
+                .bar {
+                    display: block;
+                    width: 100%;
+                    height: 3px;
+                    background-color: #ffffff; /* 線條顏色 */
+                    transition: all 0.3s ease-in-out; /* 轉換動畫 */
+                }
+            }
+
+            /* ⭐ 漢堡圖標 (Hamburger) 展開時變為叉叉 (X) 的樣式 */
+            .hamburger.active {
+                /* 第一條線 (上) */
+                .bar:nth-child(1) {
+                    transform: translateY(8.5px) rotate(45deg);
+                }
+                /* 第二條線 (中) - 隱藏 */
+                .bar:nth-child(2) {
+                    opacity: 0;
+                }
+                /* 第三條線 (下) */
+                .bar:nth-child(3) {
+                    transform: translateY(-8.5px) rotate(-45deg);
+                }
+            }
         }
-      }
-
-      ul.active {
-        /* ⭐ 新增：展開時由右邊滑出 */
-        transform: translateX(0);
-        opacity: 1;
-        pointer-events: auto;
-
-        li {
-          padding: 1rem 10px;
-          text-align: center;
-          &:hover{
-            transform: translateX(15px);
-          }
-        }
-      }
-
-      .hamburger {
-        display: flex; /* 手機版顯示漢堡 icon */
-      }
     }
-  }
 }
 
