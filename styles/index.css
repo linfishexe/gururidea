@@ -68,7 +68,7 @@ header nav {
   transform: translateX(-50%);
   margin-top: 20px;
   padding: 8px 0;
-  z-index: 1;
+  z-index: 9999;
   box-shadow: 0 0 5px #ffffff;
 }
 header nav .nav_logo {
@@ -147,6 +147,7 @@ footer small {
     width: 100%;
     margin: 0;
     border-radius: 0;
+    z-index: 9999;
     /* 導航列表 UL 的樣式 */
     /* ⭐ 展開狀態：滑出，顯示 (ul.active) */
     /* ---------------------------------
