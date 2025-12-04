@@ -278,6 +278,22 @@ main .works .work-cards .card .info .tools .tool {
 main .works .work-cards .card .info .tools .tool img {
   width: 18px;
 }
+main .works .work-cards .card .info .view-case-btn {
+  border: 1px solid #334155;
+  padding: 10px 30px;
+  border-radius: 50px;
+  background-color: #ffffff;
+  color: #334155;
+  display: block;
+  width: 150px;
+  white-space: nowrap;
+  margin-top: 3rem;
+  transition: background-color 0.3s;
+}
+main .works .work-cards .card .info .view-case-btn:hover {
+  background-color: #334155;
+  color: #ffffff;
+}
 main .works .work-cards .card .work-type-tag {
   width: 120px;
   padding: 0.5rem 0;

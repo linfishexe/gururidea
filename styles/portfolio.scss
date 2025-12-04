@@ -53,6 +53,22 @@ main {
                             }
                         }
                     }
+                    .view-case-btn{
+                        border: 1px solid #334155;
+                        padding: 10px 30px;
+                        border-radius: 50px;
+                        background-color: #ffffff;
+                        color: #334155;
+                        display: block;
+                        width: 150px;
+                        white-space: nowrap;
+                        margin-top: 3rem;
+                        transition: background-color .3s;
+                        &:hover{
+                            background-color: #334155;
+                            color: #ffffff;
+                        }
+                    }
                 }
                 .work-type-tag {
                     width: 120px;

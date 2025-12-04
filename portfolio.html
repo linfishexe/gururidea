@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/LOGO.ico">
-    <link rel="stylesheet" href="./styles/portfolio.css?v=1.1">
+    <link rel="stylesheet" href="./styles/portfolio.css?v=1.2">
     <title>Gururidea</title>
 </head>
 <style>
@@ -40,7 +40,8 @@
             </div>
 
             <div class="work-cards">
-                <!-- <div class="card">
+                <!--<a> 
+                <div class="card">
                     <img src="./img/GL_case.png" alt="case">
                     <div class="info">
                         <h2>作品名稱</h2>
@@ -57,7 +58,7 @@
                         <div class="work-type-tag">平面設計</div>
                     </div>
                     <div class="author">製作夥伴</div>
-                </div> -->
+                </div> </a>-->
             </div>
 
         </section>
@@ -67,8 +68,7 @@
         <div class="container footer_contain">
             <img src="./img/LOGO.jpg" alt="">
             <div class="social_media">
-                <a href=""><img src="./img/LINE2.png" alt=""></a>
-                <a href=""><img src="./img/IG.png" alt=""></a>
+                <a href="https://line.me/ti/p/RXjiJqA0Jk"><img src="./img/LINE2.png" alt=""></a>
             </div>
         </div>
         <small>Copyright © 2025 網站名稱 | DY工作室製作</small>
@@ -99,18 +99,21 @@
 const works = {
     "平面設計": [
         {
+            work_link:'https://cherish.tw/work/meet-for-breakfast',
             title: '早點見面-菜單設計',
             imageSrc: './img/works_img/early_menu_case.png',
             tools: ['figma'],
             authorName: '千煦設計'
         },
         {
+            work_link:'https://cherish.tw/work/namecard-consultant',
             title: '向洋數位顧問-名片設計',
             imageSrc: './img/works_img/sianyang_card_case.png',
             tools: ['figma'],
             authorName: '千煦設計'
         },
         {
+            work_link:'https://cherish.tw/work/chiaochiang',
             title: '巧將室內設計-室內設計',
             imageSrc: './img/works_img/chiao_inner_case.png',
             tools: ['figma'],
@@ -119,58 +122,60 @@ const works = {
     ],
     "網站建置": [
         {
+            work_link:'https://biocommander.com/',
             title: '世翔國際股份有限公司',
             imageSrc: './img/works_img/Bio_case.png',
             tools: ['HTML', 'CSS'],
-            authorName: '好扣資訊'
+            authorName: 'guruidea'
         },
         {
+            work_link:'https://yamahasuma.com.tw',
             title: '潤音樂器',
             imageSrc: './img/works_img/YAMAHA_music_case.png',
             tools: ['HTML', 'CSS'],
-            authorName: '好扣資訊'
+            authorName: 'guruidea'
         },
         {
-            title: 'Moldex3D',
-            imageSrc: './img/works_img/Moldex_case.png',
-            tools: ['HTML', 'CSS'],
-            authorName: '好扣資訊'
-        },
-        {
+            work_link:'https://longlin.com.tw/',
             title: '龍霖建案',
             imageSrc: './img/works_img/LONGLIN_case.png',
-            tools: ['HTMLHIML', 'CSS'],
-            authorName: '好扣資訊'
+            tools: ['HTML', 'CSS'],
+            authorName: 'guruidea'
         },
         {
+            work_link:'https://soontanger.com.tw/divination/',
             title: '順天閣-開運命理館',
             imageSrc: './img/works_img/Swun_case.png',
             tools: ['HTML', 'CSS'],
-            authorName: '好扣資訊'
+            authorName: 'guruidea'
         },
     ],
     "系統建置": [
         {
+            work_link:'https://www.nicecode.me/demo.html',
             title: '音樂教室預約系統',
             imageSrc: './img/works_img/music_classroom_case.png',
             tools: ['PHP'],
-            authorName: '小雞'
+            authorName: '好扣資訊'
         },
         {
-            title: '課製ERP系統',
+            work_link:'https://demo1.ncsds.com/erp/login',
+            title: '客製ERP系統',
             imageSrc: './img/works_img/erp_case.png',
             tools: ['PHP'],
-            authorName: '小雞'
+            authorName: '好扣資訊'
         },
     ],
     "簡易遊戲": [
         {
+            work_link:'https://drive.google.com/file/d/101f3wNoTye5ei8wJJ5eBIJuAc8vxzcTy/view',
             title: 'bisness_Duck',
             imageSrc: './img/works_img/BussinessDuck_case.png',
             tools: ['Unreal Engine'],
             authorName: 'DY工作室'
         },
         {
+            work_link:'https://drive.google.com/file/d/1ly6E0uQylYfwn8EWLLd8H4_4ARhHuIZ4/view',
             title: '小農餓了',
             imageSrc: './img/works_img/farmer_case.png',
             tools: ['Unreal Engine'],
@@ -181,12 +186,23 @@ const works = {
 
 const workCards = document.querySelector('.work-cards')
 
-function gen_work_card(title, imageSrc, toolsArray, workType, authorName) {
+/**
+ * 創建一個作品卡片元素，並在其中包含一個 View Case 按鈕。
+ * @param {string} workLink - View Case 按鈕的 href 連結。
+ * @param {string} title - 作品標題。
+ * @param {string} imageSrc - 圖片來源。
+ * @param {string[]} toolsArray - 使用工具的字串陣列。
+ * @param {string} workType - 作品類型標籤。
+ * @param {string} authorName - 作者名稱。
+ * @returns {DocumentFragment}
+ */
+function gen_work_card(workLink, title, imageSrc, toolsArray, workType, authorName) {
     const fragment = document.createDocumentFragment();
 
-    // 建立 card 容器
+    // 建立 card 容器 (現在是頂層容器)
     const card = document.createElement("div");
     card.className = "card";
+    // 移除 work_link_a 的相關程式碼
 
     // 建立圖片
     const img = document.createElement("img");
@@ -197,6 +213,7 @@ function gen_work_card(title, imageSrc, toolsArray, workType, authorName) {
     // info 區塊
     const info = document.createElement("div");
     info.className = "info";
+    card.appendChild(info); // 將 info 加入 card
 
     // h2 標題
     const h2 = document.createElement("h2");
@@ -225,7 +242,14 @@ function gen_work_card(title, imageSrc, toolsArray, workType, authorName) {
     });
 
     info.appendChild(tools);
-    card.appendChild(info);
+    
+    // ⭐ 新增：生成 View Case 按鈕 (<a> 標籤)
+    const viewButton = document.createElement("a");
+    viewButton.href = workLink; // 使用第一個參數作為連結
+    viewButton.className = "view-case-btn";
+    viewButton.textContent = "View Case"; // 可根據需求修改按鈕文字
+    info.appendChild(viewButton);
+    // ⭐ 新增結束
 
     // work-type-tag
     const workTypeTag = document.createElement("div");
@@ -237,27 +261,38 @@ function gen_work_card(title, imageSrc, toolsArray, workType, authorName) {
     const author = document.createElement("div");
     author.className = "author";
     author.textContent = authorName;
-    card.appendChild(author);
+    card.appendChild(author); // 保持 author 在 info 外面，作為 card 的直接子元素
 
-    fragment.appendChild(card);
+    // 修正：將 card 加入到 fragment
+    fragment.appendChild(card); 
 
     return fragment;
 }
 
+/**
+ * 根據作品類型更新作品列表顯示。
+ * @param {string} workType - 要顯示的作品類型。
+ */
 function update_works_display( workType ) {
     workCards?.replaceChildren();
+    // 假設 works 是一個全局變數，包含不同 workType 的作品數據。
+    if (!works || !works[workType]) return; 
+
     for(const work of works[workType]) {
+        // 傳遞的參數順序與 gen_work_card 函數定義的順序一致
         const card = gen_work_card(
-            work.title,
-            work.imageSrc,
-            work.tools,
-            workType,
-            work.authorName
+            work.work_link,   // 1. workLink (給 View Case 按鈕使用)
+            work.title,       // 2. title
+            work.imageSrc,    // 3. imageSrc
+            work.tools,       // 4. toolsArray
+            workType,         // 5. workType
+            work.authorName   // 6. authorName
         )
         workCards.appendChild(card)
     }
 }
 
+// 示例：更新顯示
 update_works_display("平面設計")
 </script>
 </html>
